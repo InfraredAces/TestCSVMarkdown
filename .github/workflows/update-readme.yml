@@ -52,8 +52,8 @@ jobs:
         uses: schdck/create-env-json@v1
         with:
           file-name: "customReplacer.json"
-          "{{ Playstation 5 Compatibility Table }}": ${{ steps.ps5-csv-table-output.outputs.content }}
-          "{{ USB Passthrough Authentication Device Table }}": ${{ steps.usb-pt-csv-table-output.outputs.content }}
+          --Playstation 5 Compatibility Table--: ${{ steps.ps5-csv-table-output.outputs.content }}
+          --USB Passthrough Authentication Device Table--: ${{ steps.usb-pt-csv-table-output.outputs.content }}
       
       - name: Readme Replacer - Readme-Workflows
       # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
