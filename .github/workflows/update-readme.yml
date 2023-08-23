@@ -53,6 +53,7 @@ jobs:
         with:
           name: "customReplacer.json"
           json: '{"{{ Playstation 5 Compatibility Table }}": ${{ steps.ps5-csv-table-output.outputs.content }}, "{{ USB Passthrough Authentication Device Table }}": ${{ steps.usb-pt-csv-table-output.outputs.content }}}'
+          dir: "./"
       
       - name: Readme Replacer - Readme-Workflows
       # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
@@ -65,7 +66,7 @@ jobs:
           # Path to commit file
           COMMIT_FILE: ./README.md # optional, default is ./README.md
           # Path to custom replacer file (JSON). You can select if you want to use eval or not!
-          CUSTOM_REPLACER_FILE: ${{ steps.create-json.output.contents }} # optional, default is ./.github/customReplacer.json
+          CUSTOM_REPLACER_FILE: ./customReplacer.json # optional, default is ./.github/customReplacer.json
           # Format of the date/time (if date replacer used)
           COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
           # Email used for committing changes
