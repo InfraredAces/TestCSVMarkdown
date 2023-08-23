@@ -47,13 +47,25 @@ jobs:
         with:
           csvinput: ${{ steps.usb-pt-csv.outputs.content }}
 
-      - name: create-customReplacer-json
-        id: create-json
-        uses: schdck/create-env-json@v1
+
+      - name: Set and Get values from the package.json
+        id: packageJson
+        uses: RadovanPelka/github-action-json@main
         with:
-          file-name: "customReplacer.json"
-          --Playstation 5 Compatibility Table--: ${{ steps.ps5-csv-table-output.outputs.content }}
-          --USB Passthrough Authentication Device Table--: ${{ steps.usb-pt-csv-table-output.outputs.content }}
+          path: "./table-replace.json"
+          replaceWith: |
+            [
+                {
+                  "search": "--Playstation 5 Compatibility Table--",
+                  "replace": "${{ steps.ps5-csv-table-output.outputs.content }}",
+                  "eval": true
+                },
+                {
+                  "search": "--USB Passthrough Authentication Device Table--",
+                  "replace": "${{ steps.usb-pt-csv.outputs.content }}",
+                  "eval": true
+                }
+            ]
       
       - name: Readme Replacer - Readme-Workflows
       # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
@@ -62,7 +74,7 @@ jobs:
           GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
           TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
           COMMIT_FILE: ./README.md # optional, default is ./README.md
-          CUSTOM_REPLACER_FILE: ${{ steps.create-json.outputs.full-path }} # optional, default is ./.github/customReplacer.json
+          CUSTOM_REPLACER_FILE: ./table-replace.json # optional, default is ./.github/customReplacer.json
           COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
           COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
           COMMIT_NAME: replacer-bot # optional, default is replacer-bot
