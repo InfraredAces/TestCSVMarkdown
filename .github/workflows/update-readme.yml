@@ -53,3 +53,4 @@ jobs:
         with:
           name: "customReplacer.json"
           json: '{"{{ Playstation 5 Compatibility Table }}": ${{ steps.ps5-csv-table-output.outputs.content }}, "{{ USB Passthrough Authentication Device Table }}": ${{ steps.usb-pt-csv-table-output.outputs.content }}}'
+          dir: './'
