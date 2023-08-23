@@ -1,0 +1,12 @@
+[
+  {
+    "search": "--Playstation 5 Compatibility Table--",
+    "replace": "Bar",
+    "eval": true
+  },
+  {
+    "search": "--USB Passthrough Authentication Device Table--",
+    "replace": "Bar",
+    "eval": true
+  }
+]
