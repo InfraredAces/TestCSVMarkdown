@@ -54,17 +54,30 @@ jobs:
           filename: 'table-replace.json'
           json: |
             [
-                {
-                  "search": "--Playstation 5 Compatibility Table--",
-                  "replace": "${{ steps.ps5-csv-table-output.outputs.markdown-table }}",
-                  "eval": true
-                },
-                {
-                  "search": "--USB Passthrough Authentication Device Table--",
-                  "replace": "${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}",
-                  "eval": true
-                }
+              {
+                "search": "--Playstation 5 Compatibility Table--",
+                "replace": "test1",
+                "eval": true
+              },
+              {
+                "search": "--USB Passthrough Authentication Device Table--",
+                "replace": "test2",
+                "eval": true
+              }
             ]
+
+            # [
+            #   {
+            #     "search": "--Playstation 5 Compatibility Table--",
+            #     "replace": "${{ steps.ps5-csv-table-output.outputs.markdown-table }}",
+            #     "eval": true
+            #   },
+            #   {
+            #     "search": "--USB Passthrough Authentication Device Table--",
+            #     "replace": "${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}",
+            #     "eval": true
+            #   }
+            # ]
 
       - name: Test output
         run: cat ./table-replace.json
