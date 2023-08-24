@@ -1,12 +1,23 @@
 [
   {
     "search": "--Playstation 5 Compatibility Table--", 
-    "replace":"Test1",
+    "replace":"| Game Title          | GP2040-CE (PS5 Version) | Notes                                     |
+| ------------------- | ----------------------- | ----------------------------------------- |
+| Breakers Collection | ❌                       | Does not support Specialty Devices at all |
+| Gran Turismo 7      | 🚗                      |                                           |
+| Guilty Gear Strive  | 🕹️                     |                                           |
+| Hitman 3            | 🕗                      |
+| Street Fighter 6    | 🕹️                     |                                           |", 
     "eval": true
   },
   {
     "search": "--USB Passthrough Authentication Device Table--",
-    "replace": "Test2",
+    "replace": "| Manufacturer             | Controller/Dongle    | Console              | Notes                                                         | Link           |
+| ------------------------ | -------------------- | -------------------- | ------------------------------------------------------------- | -------------- | -------------------------------------------- |
+| Mayflash                 | Magic Boots          | PS4/PS5 (Non-Native) | V1.1+ firmware only                                           |  DO NOT UPDATE | https://www.mayflash.com/product/MAGPS4.html |
+| Mayflash.Magic S Ultimat | PS4/PS5 (Non-Native) | V1.06+ firmware only | https://www.mayflash.com/product/magic_s_ultimate.html        |
+| Brook                    | Wingman FGC          | PS4/PS5 (Non-Native) | https://www.brookaccessory.com/products/wingmanfgc/index.html |
+| Razer                    | Raion Wired Fightpad | PS4/PS5 (Non-Native) | https://www.razer.com/eu-en/console-controllers/razer-raion   |",
     "eval": true
   }
 ]

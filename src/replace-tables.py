@@ -1,16 +1,18 @@
-import json
+import pandas as pd
 
-table_replace_json = open('src/table-replace.json')
-table_replace_data = json.load(table_replace_json)
+ps5_compatibility = pd.read_csv('playstation-5-Compatibility.csv')
+usb_passthrough_devices = pd.read_csv('usb-passthrough-devices.csv')
 
-with open(r'README.md', 'r') as readme:
+with open('README.md', 'r') as readme:
     data = readme.read()
 
-    for i in table_replace_data:
-        if(i['eval'] is True):
-            data = data.replace(i['search'], i['replace'])
+    ps5_compatibility_replace_txt = "--Playstation 5 Compatibility Table--"
+    data = data.replace(ps5_compatibility_replace_txt, ps5_compatibility.to_markdown())
+
+
+    usb_passthrough_devices_replace_text = "--USB Passthrough Authentication Device Table--"
+    data = data.replace(usb_passthrough_devices_replace_text, usb_passthrough_devices.to_markdown())
+
 
 with open(r'README.md', 'w') as readme:
     readme.write(data)
-
-table_replace_json.close()
