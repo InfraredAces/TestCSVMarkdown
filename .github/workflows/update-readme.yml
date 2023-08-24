@@ -75,8 +75,8 @@ jobs:
       - name: Replace Text in README
         run: |
           cp TEMPLATE.md README.md
-          sed 's/"--Playstation 5 Compatibility Table--"/"${{ steps.ps5-csv-table-output.outputs.markdown-table }}"' README.md
-          sed 's/"--USB Passthrough Authentication Device Table--"/"${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}"' README.md
+          sed 's/"--Playstation 5 Compatibility Table--"/"${{ steps.ps5-csv-table-output.outputs.markdown-table }}"/' README.md
+          sed 's/"--USB Passthrough Authentication Device Table--"/"${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}"/' README.md
       
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
