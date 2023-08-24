@@ -48,7 +48,7 @@ jobs:
           csvinput: ${{ steps.usb-pt-csv.outputs.content }}
 
       - name: Test output
-        run: cat ./table-replace.json
+        run: cat src/table-replace.json
         
       - name: Create JSON
         uses: devops-actions/json-to-file@v1.0.0
@@ -70,7 +70,7 @@ jobs:
             ]
 
       - name: Test output
-        run: cat ./table-replace.json
+        run: cat src/table-replace.json
 
       - name: Copy TEMPLATE to README
         run: |
