@@ -41,7 +41,7 @@ jobs:
         with:
           path: ./usb-passthrough-devices.csv
           
-      - name: Create Playstation 5 Compatibility MD
+      - name: Create USB Passthrough MD
         uses: petems/csv-to-md-table-action@master
         id: usb-pt-csv-table-output
         with:
@@ -56,12 +56,12 @@ jobs:
             [
                 {
                   "search": "--Playstation 5 Compatibility Table--",
-                  "replace": "${{ steps.ps5-csv-table-output.outputs.content }}",
+                  "replace": "${{ steps.ps5-csv-table-output.outputs.markdown-table }}",
                   "eval": true
                 },
                 {
                   "search": "--USB Passthrough Authentication Device Table--",
-                  "replace": "${{ steps.usb-pt-csv.outputs.content }}",
+                  "replace": "${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}",
                   "eval": true
                 }
             ]
