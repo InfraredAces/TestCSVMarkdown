@@ -17,7 +17,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    if: "!contains(github.event.head_commit.message, 'Replace Current Tables with New Tables')"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -66,8 +66,8 @@ jobs:
                 }
             ]
 
-      # - name: Test output
-      #   run: cat ./table-replace.json
+      - name: Test output
+        run: cat ./table-replace.json
       
       - name: Readme Replacer - Readme-Workflows
       # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
