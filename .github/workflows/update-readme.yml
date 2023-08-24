@@ -47,6 +47,9 @@ jobs:
         with:
           csvinput: ${{ steps.usb-pt-csv.outputs.content }}
 
+      - name: Test output
+        run: cat ./table-replace.json
+        
       - name: Create JSON
         uses: devops-actions/json-to-file@v1.0.0
         id: create-json
