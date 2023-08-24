@@ -71,15 +71,24 @@ jobs:
 
       - name: Test output
         run: cat ./table-replace.json
+
+      - name: Replace Text in README
+        run: |
+          cp TEMPLATE.md README.md
+          sed 's/"--Playstation 5 Compatibility Table--"/"${{ steps.ps5-csv-table-output.outputs.markdown-table }}"' README.md
+          sed 's/"--USB Passthrough Authentication Device Table--"/"${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}"' README.md
       
-      - name: Readme Replacer - Readme-Workflows
-      # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
-        uses: Readme-Workflows/readme-replacer@v1.0.1
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
-          TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
-          COMMIT_FILE: ./README.md # optional, default is ./README.md
-          CUSTOM_REPLACER_FILE: ./table-replace.json # optional, default is ./.github/customReplacer.json
-          COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
-          COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
-          COMMIT_NAME: replacer-bot # optional, default is replacer-bot
+          commit_message: Replace Current Tables with New Tables
+      # - name: Readme Replacer - Readme-Workflows
+      # # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
+      #   uses: Readme-Workflows/readme-replacer@v1.0.1
+      #   with:
+      #     GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
+      #     TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
+      #     COMMIT_FILE: ./README.md # optional, default is ./README.md
+      #     CUSTOM_REPLACER_FILE: ./table-replace.json # optional, default is ./.github/customReplacer.json
+      #     COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
+      #     COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
+      #     COMMIT_NAME: replacer-bot # optional, default is replacer-bot
