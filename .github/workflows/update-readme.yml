@@ -58,11 +58,7 @@ jobs:
                 "replace": "${{ steps.ps5-csv-table-output.outputs.markdown-table }}",
                 "eval": true
             }
-            # {
-            #   "search": "--USB Passthrough Authentication Device Table--",
-            #   "replace": "${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}",
-            #   "eval": true
-            # }
+
 
       - name: Test output
         run: cat ./table-replace.json
