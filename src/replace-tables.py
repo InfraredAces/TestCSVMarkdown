@@ -1,7 +1,7 @@
 import pandas as pd
 
-ps5_compatibility = pd.read_csv('playstation-5-Compatibility.csv')
-usb_passthrough_devices = pd.read_csv('usb-passthrough-devices.csv')
+ps5_compatibility = pd.read_csv('playstation-5-Compatibility.csv', keep_default_na=False)
+usb_passthrough_devices = pd.read_csv('usb-passthrough-devices.csv', keep_default_na=False)
 
 with open('README.md', 'r') as readme:
     data = readme.read()
