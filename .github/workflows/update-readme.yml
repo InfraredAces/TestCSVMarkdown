@@ -65,15 +65,18 @@ jobs:
                   "eval": true
                 }
             ]
+
+      - name: Test output
+        run: echo ${{ steps.create-json.outputs }}
       
-      - name: Readme Replacer - Readme-Workflows
-      # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
-        uses: Readme-Workflows/readme-replacer@v1.0.1
-        with:
-          GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
-          TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
-          COMMIT_FILE: ./README.md # optional, default is ./README.md
-          CUSTOM_REPLACER_FILE: ${{ github.workspace }}/table-replace.json # optional, default is ./.github/customReplacer.json
-          COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
-          COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
-          COMMIT_NAME: replacer-bot # optional, default is replacer-bot
+      # - name: Readme Replacer - Readme-Workflows
+      # # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
+      #   uses: Readme-Workflows/readme-replacer@v1.0.1
+      #   with:
+      #     GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
+      #     TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
+      #     COMMIT_FILE: ./README.md # optional, default is ./README.md
+      #     CUSTOM_REPLACER_FILE: ${{ github.workspace }}/table-replace.json # optional, default is ./.github/customReplacer.json
+      #     COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
+      #     COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
+      #     COMMIT_NAME: replacer-bot # optional, default is replacer-bot
