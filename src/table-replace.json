@@ -1,7 +1,7 @@
 [
   {
     "search": "--Playstation 5 Compatibility Table--", 
-    "replace":"Test1"
+    "replace":"Test1",
     "eval": true
   },
   {

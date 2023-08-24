@@ -20,7 +20,7 @@ As of GP2040-CE v0.7.4, USB Passthrough Authentication is also available to have
 
 This list is only considering PS5 versions of games on PS5 as PS4 mode should work on all PS4 versions of a game on PS5.
 
---Playstation 5 Compatibility Table--
+Test1
 
 | Symbol | Meaning                                                     |
 |:------:|-------------------------------------------------------------|
@@ -37,4 +37,4 @@ With the addition of the USB Passthrough Authentication Add-on in GP2040-CE v 0.
 
 PS5 (Non-Native): Able to be used with PS5 games that support 3rd Party licensed PS4 controllers and arcade sticks
 
---USB Passthrough Authentication Device Table--
+Test2
