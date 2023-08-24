@@ -48,12 +48,11 @@ jobs:
           csvinput: ${{ steps.usb-pt-csv.outputs.content }}
 
 
-      - name: Set and Get values from the package.json
-        id: packageJson
-        uses: RadovanPelka/github-action-json@main
+      - uses: devops-actions/json-to-file@v1.0.0
+        id: create-json
         with:
-          path: "./table-replace.json"
-          replaceWith: |
+          filename: 'table-replace.json'
+          json: |
             [
                 {
                   "search": "--Playstation 5 Compatibility Table--",
