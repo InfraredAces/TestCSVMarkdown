@@ -47,8 +47,24 @@ jobs:
         with:
           csvinput: ${{ steps.usb-pt-csv.outputs.content }}
 
-
-
+      - name: Create JSON
+        uses: devops-actions/json-to-file@v1.0.0
+        id: create-json
+        with:
+          filename: 'table-replace.json'
+          json: |
+            [
+              {
+                "search": "--Playstation 5 Compatibility Table--", 
+                "replace":"${{ steps.ps5-csv-table-output.outputs.markdown-table }}", 
+                "eval": true
+              },
+              {
+                "search": "--USB Passthrough Authentication Device Table--",
+                "replace": "${{ steps.usb-pt-csv-table-output.outputs.markdown-table }}",
+                "eval": true
+              }
+            ]
 
       - name: Test output
         run: cat ./table-replace.json
