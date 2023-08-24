@@ -67,7 +67,7 @@ jobs:
             ]
 
       - name: Test output
-        run: echo ${{ steps.create-json.outputs }}
+        run: echo ${{ steps.create-json.outputs.contents }}
       
       # - name: Readme Replacer - Readme-Workflows
       # # uses: Readme-Workflows/readme-replacer@476f6f7ca5f3a0e7d3a55712d70227845ea3c3b6
