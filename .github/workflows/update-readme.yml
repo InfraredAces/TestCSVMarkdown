@@ -73,7 +73,7 @@ jobs:
           GH_USERNAME: ${{ github.repository_owner }} # optional, default is ${{ github.repository_owner }}
           TEMPLATE_FILE: ./TEMPLATE.md # optional, default is ./TEMPLATE.md
           COMMIT_FILE: ./README.md # optional, default is ./README.md
-          CUSTOM_REPLACER_FILE: ./table-replace.json # optional, default is ./.github/customReplacer.json
+          CUSTOM_REPLACER_FILE: ${{ github.workspace }}/table-replace.json # optional, default is ./.github/customReplacer.json
           COMMIT_MESSAGE: "Replace Current Tables with New Tables" # optional, default is ⚡ Update README by replacing keywords
           COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
           COMMIT_NAME: replacer-bot # optional, default is replacer-bot
