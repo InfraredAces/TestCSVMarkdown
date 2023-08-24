@@ -77,7 +77,7 @@ jobs:
           cp TEMPLATE.md README.md
 
       - name: Replace Playstation 5 Compatibility Table in README
-        uses: Nambers/ReplaceStringInFile@v1
+        uses: Nambers/ReplaceStringInFile@v1.3
         with:
           path: ${{ github.workspace }}/README.md
           oldString: --Playstation 5 Compatibility Table--
