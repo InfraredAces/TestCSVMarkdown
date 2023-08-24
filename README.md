@@ -23,10 +23,10 @@ This list is only considering PS5 versions of games on PS5 as PS4 mode should wo
 |    | Game Title          | GP2040-CE (PS5 Version)   | Notes                                     |
 |---:|:--------------------|:--------------------------|:------------------------------------------|
 |  0 | Breakers Collection | ❌                         | Does not support Specialty Devices at all |
-|  1 | Gran Turismo 7      | 🚗                         | nan                                       |
-|  2 | Guilty Gear Strive  | 🕹️                        | nan                                       |
-|  3 | Hitman 3            | 🕗                         | nan                                       |
-|  4 | Street Fighter 6    | 🕹️                        | nan                                       |
+|  1 | Gran Turismo 7      | 🚗                         |                                           |
+|  2 | Guilty Gear Strive  | 🕹️                        |                                           |
+|  3 | Hitman 3            | 🕗                         |                                           |
+|  4 | Street Fighter 6    | 🕹️                        |                                           |
 
 | Symbol | Meaning                                                     |
 |:------:|-------------------------------------------------------------|
